@@ -1,3 +1,78 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
 
+#app {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#navbar {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  padding: 0.5em;
+  font-size: 40px;
+  list-style: none;
+  color: whitesmoke;
+  background-color: mediumaquamarine;
+  overflow: hidden;
+}
+#navbar.closed {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+}
+#navbar.opened {
+  max-width: 20em;
+  height: 1em;
+  border-radius: 10%/50%;
+}
+#navbar.opened .menu-item {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  visibility: visible;
+}
+#navbar.opened .menu-item.main {
+  animation-name: spin;
+  animation-duration: 600ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.menu-item {
+  margin: 0;
+  width: 1em;
+  height: 1em;
+  transition: width 0.3s linear, visibility 0.1s ease 0.3s;
+}
+.menu-item i {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  text-align: center;
+}
+.menu-item:hover {
+  cursor: pointer;
+  transform: scale(1.1) rotate(0.02deg);
+}
+.menu-item.hidden {
+  transition: width 0s, visibility 0s;
+  width: 0px;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(315deg);
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

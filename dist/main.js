@@ -1,0 +1,1 @@
+document.querySelector("#navbar").addEventListener("click",(({currentTarget:e})=>{e.classList.toggle("opened"),e.classList.toggle("closed"),e.querySelectorAll(".menu-item").forEach((e=>{e.classList.contains("main")||e.classList.toggle("hidden")}))}));
